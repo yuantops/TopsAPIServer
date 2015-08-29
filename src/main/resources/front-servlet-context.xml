@@ -15,10 +15,12 @@
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
     <!-- Scan within base package for annotated @Components to configure as beans-->
-    <!-- @Controller, @Service, @Configuration, ect.-->
-    <context:component-scan base-package="com.yuantops.tv"/>
+    <!-- only @Controller is scanned since other components have already been handled in root-servlet-->
+    <context:component-scan base-package="com.yuantops.tv" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
 
-    <!-- Enables the Spring MVC @Controller programming model-->
+    <!-- Enables support for new Spring MVC features such as annotations @Valid, @RequestBody/@ResponseBody-->
     <mvc:annotation-driven/>
 
     <!-- Jsp view resolver-->

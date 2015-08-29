@@ -1,7 +1,7 @@
 package com.yuantops.tv.bean;
 
 /**
- * Created by yy102317 on 2015/8/27.
+ * Created by yuantops(yuan.tops@gmail.com) on 2015/8/27.
  * POJO for video item
  */
 public class Video {

@@ -6,9 +6,12 @@
 
     <select id="getOnlineVideoList" parameterType="int" resultType="Video">
         SELECT * FROM videos
-        <if test="limit != null">
-            limit ${limit}
-        </if>
+        LIMIT #{limit}
+    </select>
+
+    <select id="getVideoById" parameterType="int" resultType="Video">
+        SELECT * FROM videos
+        WHERE id = #{id}
     </select>
 
 </mapper>
