@@ -9,5 +9,6 @@ import java.util.List;
  */
 public interface VideoService {
     public List<Video> getVideoList(String limitStr);
+    public Video       getVideoById(String id);
     public List<Video> getListByGenre(String genre, String limitStr);
 }

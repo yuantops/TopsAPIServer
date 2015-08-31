@@ -17,6 +17,11 @@ public class VideoServiceImpl implements VideoService {
     @Resource
     private VideoDao videoDao;
 
+    public Video getVideoById(String idStr) {
+        int id = Integer.valueOf(idStr);
+        return videoDao.getVideoById(id);
+    }
+
     public List<Video> getVideoList(String limitStr) {
         int limit;
         if (limitStr == null) {
